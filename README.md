@@ -141,6 +141,11 @@ construction, credential/server selection, pagination, throttling, retry behavio
 response validation, and lossless normalization without requiring account credentials
 or downloading images.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development, testing, and pull request guidance.
+Coding agents should also read [AGENTS.md](AGENTS.md).
+
 ## Publishing
 
 The GitHub Actions publish workflow runs on version tags such as `v0.1.0` or `0.1.0`.
