@@ -1,0 +1,12 @@
+{
+	"node": "@overworks/n8n-nodes-booru.booru",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Miscellaneous"],
+	"resources": {
+		"credentialDocumentation": [
+			{ "url": "https://github.com/overworks/n8n-nodes-booru#credentials" }
+		],
+		"primaryDocumentation": [{ "url": "https://github.com/overworks/n8n-nodes-booru" }]
+	}
+}

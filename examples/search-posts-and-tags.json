@@ -1,0 +1,57 @@
+{
+	"name": "Search Danbooru posts and tags",
+	"nodes": [
+		{
+			"parameters": {},
+			"id": "start",
+			"name": "When clicking Execute workflow",
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [0, 0]
+		},
+		{
+			"parameters": {
+				"resource": "post",
+				"operation": "search",
+				"tags": "landscape rating:g",
+				"returnAll": false,
+				"limit": 5,
+				"outputFormat": "raw"
+			},
+			"id": "posts",
+			"name": "Search posts",
+			"type": "@overworks/n8n-nodes-booru.booru",
+			"typeVersion": 1,
+			"position": [260, -100]
+		},
+		{
+			"parameters": {
+				"resource": "tag",
+				"operation": "search",
+				"nameMatches": "landscape*",
+				"category": "0",
+				"tagOrder": "count",
+				"returnAll": false,
+				"limit": 5
+			},
+			"id": "tags",
+			"name": "Search tags",
+			"type": "@overworks/n8n-nodes-booru.booru",
+			"typeVersion": 1,
+			"position": [260, 100]
+		}
+	],
+	"connections": {
+		"When clicking Execute workflow": {
+			"main": [
+				[
+					{ "node": "Search posts", "type": "main", "index": 0 },
+					{ "node": "Search tags", "type": "main", "index": 0 }
+				]
+			]
+		}
+	},
+	"settings": { "executionOrder": "v1" },
+	"active": false,
+	"pinData": {}
+}
